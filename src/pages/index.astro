@@ -1,5 +1,10 @@
 ---
-
+import Navigation from "../components/Navigation.astro"
+import Hero from "../components/Hero.astro"
+import ProjectsSection from "../components/ProjectsSection.astro"
+import RolsSection from "../components/RolsSection.astro"
+import SkillsSection from "../components/SkillsSection.astro"
+import ContactSection from "../components/ContactSection.astro"
 ---
 
 <html lang="en">
@@ -7,11 +12,18 @@
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="../styles/*">
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Navigation /> 
+		<Hero />
+		<RolsSection />
+		<ProjectsSection />
+		<SkillsSection />
+		<ContactSection />
+
 	</body>
 </html>
