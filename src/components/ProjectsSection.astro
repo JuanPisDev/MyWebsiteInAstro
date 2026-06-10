@@ -3,11 +3,11 @@ import Project from "./Project.astro"
 ---
 <section>
     <div class="project">
-        <Project projectName="NEXTJS" />
+        <Project projectName="NEXTJS" projectImage="../assets/DashboardApp.png" projectLink="https://nextjs-dashboard-bmmvmxob2-juanpadev2003-4596s-projects.vercel.app/"/> 
 
     </div>
     <div class="project">
-        <Project projectName="ASTRO" />
+        <Project projectName="ASTRO" projectImage="../assets/AstroBlog.png" projectLink=" https://juanpadevastrotutorial.netlify.app/"/> 
     </div>
 </section>
 <style>
@@ -24,7 +24,10 @@ import Project from "./Project.astro"
         flex-wrap: wrap;
         justify-content: space-around;
     }
-    
+    .project{
+        height: 30vh;
+        width: 40%;
+    }
 
     
 </style>

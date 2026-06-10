@@ -1,10 +1,12 @@
 ---
 
 const {projectName} = Astro.props;
+const {projectLink} = Astro.props;
+const {projectImage} = Astro.props;
 ---
 <div class="project">
-    <h2>{projectName}</h2>
-    <img src="" alt="">
+    <h2><a href={projectLink}>{projectName}</a></h2>
+    <img src={projectImage} alt="">
 </div>
 <style>
         *{
@@ -18,5 +20,19 @@ const {projectName} = Astro.props;
         background-color: rgb(47, 47, 139);
         width: 100%;
         height: 100%;
+        border-radius: 8%;
+    }
+    .project h2{
+        padding-top: 5%;
+        padding-left: 5%;
+        color: black;
+    }
+    .project h2 a{
+        color: black;
+        text-decoration: none
+        ;
+    }
+    .project img{
+        
     }
 </style>
