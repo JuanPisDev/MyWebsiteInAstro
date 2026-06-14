@@ -1,6 +1,7 @@
 ---
 ---
-<section class="hero">
+<section >
+    <div class="hero">
     <div class="hero-left">
         <img src="" alt="">
     </div>
@@ -9,44 +10,69 @@
             <h2>Web Developer</h2>
             <p>¡Aprende Más!</p>
     </div>
+    </div>
 </section>
 <style>
     *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family:sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
     .hero {
         display: flex;
         height: 45vh;
+        width: 95%;
+        flex-wrap: wrap;
+        justify-content: space-between ;
+        align-items: center;
+        color: white;
+        text-shadow: 1px 1px 12px rgb(0, 0, 0);
+
     }
     .hero .hero-left{
-        width: 50%;
+        height: 90%;
+        width: 48%;
+        background-color: whitesmoke;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.2);
+
     }
     .hero .hero-right{
-        width: 50%;
+        height: 90%;
+        width: 48%;
+        display: flex;
+        flex-direction: column;
         align-items: center;  
         justify-content: center;  
+        background-color: rgb(119, 221, 119);
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.2);
     }
     .hero .hero-right h1{
-        display: block;
-        padding-top: 5vh ;
         justify-content: center;
         text-align: center;
-        align-items: center;    
+        align-items: center;  
+        margin: 0;  
     }
     .hero .hero-right h2{
+        margin: 0;
         display: block;
         align-items: center;
         text-align: center;
         justify-content: center;
     }
     .hero .hero-right p{
+        margin: 0;
         display: block;
         align-items: center;
         text-align: center;
         justify-content: center;
+    }
+    section{
+        display: flex;
+        justify-content: center;
+
     }
 
 </style>
