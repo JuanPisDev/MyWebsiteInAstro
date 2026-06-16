@@ -1,6 +1,15 @@
 ---
 ---
 <nav>
+        <button>☰</button>
+        <div class="sideBar">
+            <button>Dark/Light Mode</button>
+            <ul>
+                <li>Idioma</li>
+                <li>Blog</li>
+            </ul>
+            <button class="cerrarSideBar">✖</button>
+        </div>
         <ul>
             <li>Sobre Mí</li>
             <li>Proyectos</li>
@@ -21,26 +30,84 @@
         height: 10vh;
         align-items: center;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+        margin: 2% 0 2% 0;
+        position: sticky;
+        top: 2%;
+        z-index: 1000;
     }
+
+    nav button{
+        width: 10vh;
+        height: 10vh;
+        background-color: rgb(119, 221, 119);
+        border-radius: 50%;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.2);
+        border: none;
+        cursor: pointer;
+        font-size: 2rem;
+        color: whitesmoke;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)
+    }
+
+    .sideBar {
+        top: 2vh;
+        left: 2vh;
+        position: absolute;
+        width: 50vw;
+        display: ;
+    }
+
+    .sideBar button{
+        height: 9vh;
+        width: 90%;
+        margin: 0 0 2vh 0;
+        border-radius: 2rem;
+        font-size: 1.5rem;
+
+    }
+
+    .sideBar ul {
+        width: 90%;
+        height: 90%;
+        border-radius: 2rem;
+    }
+
+    .sideBar ul li{
+        height: 9vh;
+        width: 90%;
+        border-radius: 0px;
+        font-size: 1.5rem;
+    }
+
+    .sideBar .cerrarSideBar{
+        position: absolute;
+        top: 0;
+        left:30vh;
+        width: 9vh;
+        height: 9vh;
+        border-radius: 50%;
+
+    }
+
     nav ul{
         height: 100%;
-        width: 95%;
+        width: 70%;
         list-style-type: none;
         display: flex;
         flex-wrap: wrap;
         align-items: ;
         justify-content: space-around;
         background-color: rgb(119, 221, 119);
-        border-radius: 0.5rem;
+        border-radius: 2.5rem;
         box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.2);
     }
     nav ul li{
         display: flex;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         align-items: center;
         color: whitesmoke;
-        text-shadow: 2px 2px 10px rgb(0, 0, 0)
+        text-shadow: 2px 2px 10px rgb(0, 0, 0);
 
     }
     nav ul li:hover{
