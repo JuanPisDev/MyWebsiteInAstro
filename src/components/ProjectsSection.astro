@@ -2,7 +2,7 @@
 import Project from "./Project.astro"
 
 ---
-<section>
+<section id="projectsSection">
     <div class="projectSection">
     <h1>PROYECTOS</h1>
     <div class="project">
@@ -40,6 +40,13 @@ import Project from "./Project.astro"
         border-radius: 1rem;
         box-shadow: inset 0 4px 10px rgba(0,0,0,0.4), 0 10px 20px rgba(0,0,0,0.2);
     }
+
+    :global(html.dark) .projectSection{
+        background-color: rgb(65, 138, 65);
+        box-shadow:  inset 0 4px 10px rgba(0, 0, 0, 0.5);
+    
+    }
+
     .project{
         margin: 2% 2% 5% 2%;
         height: 9rem; 
@@ -53,7 +60,7 @@ import Project from "./Project.astro"
         font-weight: bold;
         font-size: 3rem;
         color: whitesmoke;
-        text-shadow: 5px 5px 8px rgb(0, 0, 0)
+        text-shadow: 5px 5px 15px rgb(0, 0, 0);
 
     }
 

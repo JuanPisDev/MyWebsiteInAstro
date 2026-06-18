@@ -1,9 +1,10 @@
 ---
+
 ---
-<section >
+<section id="heroSection">
     <div class="hero">
     <div class="hero-left">
-        <img src="" alt="">
+        <img src="/heroImages/MiFoto.jpeg" alt="Una Foto Mía con una taza gigante">
     </div>
     <div class="hero-right">
             <h1>Juan Pablo</h1>
@@ -35,9 +36,18 @@
         width: 48%;
         background-color: whitesmoke;
         border-radius: 1rem;
-        box-shadow: inset 0 4px 10px rgba(0,0,0,0.4);
+        box-shadow:  0 4px 10px rgba(0,0,0,0.4);
 
     }
+
+    .hero-left img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+
+    }
+
     .hero .hero-right{
         height: 90%;
         width: 48%;
@@ -47,8 +57,14 @@
         justify-content: center;  
         background-color: rgb(119, 221, 119);
         border-radius: 1rem;
-        box-shadow: inset 0 4px 10px rgba(0,0,0,0.4);
+        box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.5);
     }
+
+    :global(html.dark) .hero .hero-right{
+        background-color: rgb(65, 138, 65);
+        box-shadow:  inset 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
     .hero .hero-right h1{
         justify-content: center;
         text-align: center;

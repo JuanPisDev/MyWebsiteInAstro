@@ -43,9 +43,14 @@
         align-items: center;
         background-color: rgb(119, 221, 119);
         border-radius: 1rem;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.2);
+        box-shadow: inset 5px 5px 15px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.2);
 
     }
+
+    :global(html.dark) .certificationsSection{
+        background-color: rgb(65, 138, 65);
+    }
+
     .certificationsSection h1{
         text-align: center;
         width: 100%;
@@ -53,13 +58,13 @@
         font-weight: bold;
         font-size: 2rem;
         color: whitesmoke;
-        text-shadow: 2px 2px 10px rgb(0, 0, 0)
+        text-shadow: 5px 5px 10px rgb(0, 0, 0)
 
     }
     
     .rol {
         display: flex;
-        background-color: rgb(49, 129, 49);
+        background: linear-gradient(to right, #9a9e9a, #e9f1ec); 
         border-radius: 1rem;
         justify-content: center;
         align-items: center;

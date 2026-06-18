@@ -1,22 +1,62 @@
 ---
+
+
+
 ---
-<nav>
-        <button>☰</button>
-        <div class="sideBar">
-            <button>Dark/Light Mode</button>
+<nav id="navSection">
+
+        <button id="openBtn">☰</button>
+        <div id="overlay" class="overlay"></div>
+        <div class="sideBar" id="sideBar">
+            <button class="visionMode" id="themeToggle" >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path class="sun" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    <path class="moon" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                </svg>
+
+            </button>
             <ul>
                 <li>Idioma</li>
                 <li>Blog</li>
             </ul>
-            <button class="cerrarSideBar">✖</button>
+            <button class="cerrarSideBar" id="closeBtn">✖</button>
         </div>
         <ul>
             <li>Sobre Mí</li>
-            <li>Proyectos</li>
-            <li>Skills</li>
+            <li><a href="#projectsSection">Proyectos</a></li>
+            <li><a href="#skillsSection">Habilidades</a></li>
         </ul>
 
 </nav>
+
+<script is:inline>
+    const openBtn = document.getElementById('openBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const sideBar = document.getElementById('sideBar');
+    const overlay= document.getElementById('overlay')
+
+    openBtn?.addEventListener('click', () => {
+        sideBar?.classList.toggle('activo');
+        overlay?.classList.add('activo');
+    });
+
+    function openMenu(){
+        sideBar?.classList.add('activo');
+        overlay?.classList.add('activo');
+    }
+
+    function closeMenu(){
+        sideBar?.classList.remove('activo');
+        overlay?.classList.remove('activo');
+    }
+
+    openBtn?.addEventListener('click', openMenu);
+    closeBtn?.addEventListener('click', closeMenu);
+    
+    document.getElementById('themeToggle')?.addEventListener('click', handleToggleClick);
+
+
+</script>
 
 <style>
 
@@ -50,44 +90,8 @@
         text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)
     }
 
-    .sideBar {
-        top: 2vh;
-        left: 2vh;
-        position: absolute;
-        width: 50vw;
-        display: ;
-    }
-
-    .sideBar button{
-        height: 9vh;
-        width: 90%;
-        margin: 0 0 2vh 0;
-        border-radius: 2rem;
-        font-size: 1.5rem;
-
-    }
-
-    .sideBar ul {
-        width: 90%;
-        height: 90%;
-        border-radius: 2rem;
-    }
-
-    .sideBar ul li{
-        height: 9vh;
-        width: 90%;
-        border-radius: 0px;
-        font-size: 1.5rem;
-    }
-
-    .sideBar .cerrarSideBar{
-        position: absolute;
-        top: 0;
-        left:30vh;
-        width: 9vh;
-        height: 9vh;
-        border-radius: 50%;
-
+    :global(html.dark) nav button{
+        background-color: rgb(65, 138, 65);
     }
 
     nav ul{
@@ -102,15 +106,115 @@
         border-radius: 2.5rem;
         box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.2);
     }
+
+    :global(html.dark) nav ul{
+        background-color: rgb(65, 138, 65);
+    }
+
     nav ul li{
         display: flex;
-        font-size: 1.2rem;
+        font-size: 1rem;
         align-items: center;
         color: whitesmoke;
         text-shadow: 2px 2px 10px rgb(0, 0, 0);
 
     }
     nav ul li:hover{
+        font-weight: bold;
+        cursor: pointer;
+        text-shadow: 2px 2px 5px rgb(0, 0, 0)
+
+    }
+
+    nav ul li a{
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    .sideBar {
+        top: 2vh;
+        left: 2vh;
+        position: fixed;
+        width: 50vw;
+        display: ;
+        z-index: 1000;
+        display: none; 
+        transform: translateX(-100%); 
+        /* Animación suave para la transición */
+        transition: transform 0.9s ease-in-out; 
+        z-index: 1000;
+    }
+
+    .sideBar.activo{
+        display: block;
+        transform: translateX(0);
+
+    }
+
+    .sideBar button{
+        height: 9vh;
+        width: 90%;
+        margin: 0 0 2vh 0;
+        border-radius: 2rem;
+        font-size: 1.5rem;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    :global(html.dark) .sideBar button{
+        background-color: rgb(65, 138, 65);
+    }
+
+    .sideBar button svg{
+        height: 100%;
+    }
+
+    .sideBar ul {
+        width: 90%;
+        height: 90%;
+        border-radius: 2rem;
+    }
+
+    :global(html.dark) .sideBar ul{
+        background-color: rgb(65, 138, 65);
+    }
+
+    .sideBar ul li{
+        height: 9vh;
+        width: 90%;
+        border-radius: 0px;
+        font-size: 1.5rem;
+    }
+
+    .sideBar .cerrarSideBar{
+        position: absolute;
+        top: 0;
+        left: 70vw;
+        width: 9vh;
+        height: 9vh;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .overlay{
+        display: none; 
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.541);
+        z-index: 500;
+    }
+
+    .overlay.activo{
+        display: block;
+    }
+
+    .visionMode:hover {
         font-weight: bold;
         cursor: pointer;
         text-shadow: 2px 2px 5px rgb(0, 0, 0)
