@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^8.0.0",
     "astro": "^6.4.4",
     "nodemailer": "^9.0.1",
     "pg": "^8.22.0"
