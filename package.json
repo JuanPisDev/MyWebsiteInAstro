@@ -12,6 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.4.4"
+    "astro": "^6.4.4",
+    "nodemailer": "^9.0.1",
+    "pg": "^8.22.0"
   }
 }
