@@ -2,7 +2,7 @@
 import Navigation from "../components/Navigation.astro"
 import Hero from "../components/Hero.astro"
 import ProjectsSection from "../components/ProjectsSection.astro"
-import Certifications from "../components/Certifications.astro"
+import SoftSkillsSection from "../components/SoftSkillsSection.astro"
 import SkillsSection from "../components/SkillsSection.astro"
 import ContactSection from "../components/ContactSection.astro"
 ---
@@ -12,7 +12,7 @@ import ContactSection from "../components/ContactSection.astro"
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<link rel="stylesheet" href="/styles/global.css">
+		<link rel="stylesheet" href="../styles/global.css">
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
@@ -23,7 +23,7 @@ import ContactSection from "../components/ContactSection.astro"
 		<Hero />
 		<ProjectsSection />
 		<SkillsSection />
-		<Certifications />
+		<SoftSkillsSection />
 		<ContactSection />
 
 	</body>
@@ -56,12 +56,17 @@ import ContactSection from "../components/ContactSection.astro"
 
 <style is:global>
 	html{
+			display: flex;
+			justify-content: center;
 			background-color: rgb(161, 226, 161); */
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     		scroll-behavior: smooth;
 
 	}
-	
+	body{
+		max-width: 768px;
+
+	}
   
   /* Evita que el desplazamiento quede oculto si tienes una barra de navegación fija */
   	section {

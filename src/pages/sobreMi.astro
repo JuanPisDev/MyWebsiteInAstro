@@ -1,0 +1,147 @@
+---
+    import Navigation from "../components/Navigation.astro"
+    import ContactSection from "../components/ContactSection.astro"
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="../styles/global.css">
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<Navigation /> 
+        <section>
+            <div class="aboutMe">
+                <h1>SOBRE MÍ</h1>
+                <img src="/heroImages/MiFoto.jpeg" alt="Una Foto Mía con una taza gigante">
+                <p>Estudiante de Ingeniería de Sistemas con experiencia en desarrollo web, soporte tecnológico y gestión de equipos. <br>Apasionado por la tecnología, el aprendizaje continuo y la resolución de problemas, con conocimientos en Java, JavaScript, Python, React, Astro y SQL. Busco desarrollar soluciones innovadoras y crecer profesionalmente en el sector tecnológico.</p>
+                <a href="/">REGRESAR</a>
+
+        </section>
+        <ContactSection />
+	</body>
+</html>
+<script>
+	const getThemePreference = () => {
+		if(typeof localStorage !== 'undefined' && localStorage.getItem('theme')){
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-colors-scheme: dark)').matches ? 'dark' : 'light';
+	};
+
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
+	if (typeof localStorage !== 'undefined'){
+		window.localStorage.setItem('theme', isDark ? 'dark' : 'light');
+	}
+
+	const handleToggleClick = () => {
+		const element = document.documentElement;
+		element.classList.toggle('dark');
+	};
+
+	document.getElementById('themeToggle')?.addEventListener('click', handleToggleClick);
+
+ 
+</script>
+<style>
+    html{
+			display: flex;
+			justify-content: center;
+			background-color: rgb(161, 226, 161); */
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    		scroll-behavior: smooth;
+
+	}
+	body{
+		max-width: 768px;
+
+	}
+    html.dark{
+		background-color: rgb(74, 109, 74);
+
+	}
+    :global(html.dark) .aboutMe{
+        background-color: rgb(65, 138, 65);
+  
+    }
+
+    :global(html.dark) .aboutMe p{
+        color: whitesmoke;
+    }
+    section{
+        font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS';
+        min-height: 80vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0 0 4vh 0;
+    }
+    .aboutMe {
+        margin-top: 2%;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(119, 221, 119);
+        border-radius: 1rem;
+        box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    .aboutMe h1{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 3rem;
+        color: whitesmoke;
+        text-shadow: 5px 5px 15px rgb(0, 0, 0);
+
+    }
+    .aboutMe img{
+        width: 30vh;
+        height: 30vh;
+        object-fit: cover;
+        border-radius: 1rem;
+        box-shadow:  0 4px 10px rgba(0,0,0,0.4);
+
+    }
+
+    .aboutMe p{
+        width: 70%;
+        color: whitesmoke;
+        text-align: justify;
+        font-weight: bold;
+        font-size: 1.3rem;
+        text-shadow: 0px 0px 8px black;
+    }
+
+    .aboutMe a{
+        text-decoration: none;
+        margin-bottom: 5%;
+        border: none;
+        text-shadow: none;
+        border-radius: 1rem;
+        font-weight: bold;
+        height: 5vh;
+        padding: 0 2%;
+        min-width: 45%;
+        display: flex;
+        color: black;
+        align-items: center;
+        justify-content: center;
+        background-color: whitesmoke;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .aboutMe a:hover{
+        cursor: pointer;
+        background-color: ;
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
+    }
+</style>

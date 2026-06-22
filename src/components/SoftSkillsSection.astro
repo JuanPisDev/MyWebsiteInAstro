@@ -1,0 +1,88 @@
+---
+import SoftSkill from "./SoftSkill.astro"
+
+---
+<section>
+    <div class="softSkillsSection">
+    <h1>HABILIDADES BLANDAS</h1>
+    <ul>
+        <li><SoftSkill skillImage="/softSkillImages/AprendizajeContinuo.png" softSkill="Aprendizaje continuo"/></li>
+        <li><SoftSkill skillImage="/softSkillImages/ResoluciónDeProblemas.png" softSkill="Resolución de problemas"/></li>
+        <li><SoftSkill skillImage="/softSkillImages/TrabajoEnEquipo.png" softSkill="Trabajo en equipo"/></li>
+        <li><SoftSkill skillImage="/softSkillImages/ComunicaciónEfectiva.png" softSkill="Comunicación efectiva"/></li>
+        <li><SoftSkill skillImage="/softSkillImages/PensamientoAnalitico.png" softSkill="Pensamiento analítico"/></li>
+        <li><SoftSkill skillImage="/softSkillImages/Proactividad.png" softSkill="Proactividad"/></li>
+        <li><SoftSkill skillImage="/softSkillImages/Adaptabilidad.png" softSkill="Adaptabilidad"/></li>
+        <li><SoftSkill skillImage="/softSkillImages/Resultados.png" softSkill="Orientación a resultados"/></li>
+    </ul>
+    
+</section>
+
+<style>
+    *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    section {
+        min-height: 45vh;
+        display: flex;
+        justify-content: center;
+        margin: 0 0 4vh 0;
+    }
+    .softSkillsSection{
+        width: 95%;
+        height: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(119, 221, 119);
+        border-radius: 1rem;
+        box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.4);
+
+    }
+
+    :global(html.dark) .softSkillsSection{
+        background-color: rgb(65, 138, 65);
+    }
+
+    .softSkillsSection ul{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .softSkillsSection h1{
+        margin: 0 4%;
+        text-align: center;
+        width: 100%;
+        /* font-weight: bolder; */
+        font-weight: bold;
+        font-size: 3rem;
+        color: whitesmoke;
+        text-shadow: 5px 5px 10px rgb(0, 0, 0)
+
+    }
+    
+    .softSkillsSection ul li{
+        display: flex;
+        background: linear-gradient(to right, #9a9e9a, #e9f1ec); 
+        border-radius: 1rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        /* border: 2px solid black; */
+        padding: 2%;
+        height: 9rem; 
+        width: 16rem;
+        margin: 2% 2% 5% 2%;
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.5), 0 10px 20px rgba(0,0,0,0.2);
+
+    }
+
+
+
+</style>
